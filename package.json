@@ -17,6 +17,7 @@
     "lodash": "^4.17.21",
     "mongoose": "^7.0.4",
     "mongoose-unique-validator": "^4.0.0",
-    "validator": "^13.9.0"
+    "validator": "^13.9.0",
+    "dotenv": "^16.3.1",
   }
 }
