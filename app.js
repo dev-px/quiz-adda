@@ -2,6 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const validator = require("validator");
+const path = require("path");
 require("dotenv").config();
 
 const mongoose = require("mongoose");
@@ -11,9 +12,10 @@ mongoose.connect(mongoURL);
 const app = express();
 
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.set("view engine", "ejs"); //tell the app which is generated using express to use EJS as its view engine.
+app.set("views", path.join(__dirname, 'views')); // Set the views directory
 
 const quizSchema = new mongoose.Schema({
   title: String,
